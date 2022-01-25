@@ -25,9 +25,6 @@ spec:
         volumeMounts:
         - mountPath: /tmp/video.mp4
           name: vfile
-#        env:
-#        - name: ROS_MASTER_URI
-#          value: http://roscore:11311/
         command:
         - /bin/bash
         - -c

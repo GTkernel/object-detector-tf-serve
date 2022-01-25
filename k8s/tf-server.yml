@@ -25,26 +25,9 @@ spec:
         func: obj-detect
         role: server
     spec:
-#      nodeName: granite
-#      volumes:
-#      - name: output-tmp
-#        hostPath:
-##          path: /home/nosus/workstation/edge/benchmarks/ros/numbers
-#          path: /home/gtenb/ros_tmp/
-#          type: Directory
       containers:
       - name: tf-server
         image: granite:30500/obj-detect-tf-serving:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8501
-#        volumeMounts:
-#        - mountPath: /tmp
-#          name: output-tmp
-#        env:
-#        - name: ROS_MASTER_URI
-#          value: http://roscore:11311/
-#        command:
-#        - /bin/bash
-#        - -c
-#        - "source /opt/ros/devel/setup.bash && roscore"
