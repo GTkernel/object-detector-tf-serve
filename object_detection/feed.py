@@ -252,7 +252,7 @@ while(True):
 
     # show frame to user
     t0 = time.time()
-    cv2.imshow('frame', img_processed[0])
+    #cv2.imshow('frame', img_processed[0])
     print("Amount of seconds to show image:", time.time() - t0)
 
     detections = out_util.convert_output_to_detections(
