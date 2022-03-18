@@ -18,13 +18,19 @@ spec:
         hostPath:
           path: /home/nosus/tile_lost_panda.mp4
           type: File
+#      - name: odir
+#        hostPath:
+#          path: /tmp/output
+#          type: Directory
       containers:
       - name: feeder
-        image: test:latest
+        image: video-feeder:latest
         imagePullPolicy: Never
         volumeMounts:
         - mountPath: /tmp/video.mp4
           name: vfile
+ #       - mountPath: /tmp/output
+ #         name: odir
         command:
         - /bin/bash
         - -c

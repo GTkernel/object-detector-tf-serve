@@ -8,6 +8,8 @@ spec:
     role: server
   ports:
     - port: 8501
+      nodePort: 30851
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -25,6 +27,7 @@ spec:
         func: obj-detect
         role: server
     spec:
+      nodeName: basalt
       containers:
       - name: tf-server
         image: granite:30500/obj-detect-tf-serving:latest
