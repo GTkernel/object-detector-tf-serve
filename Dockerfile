@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y ffmpeg libsm6 l
 
 COPY object_detection/ $APP_DIR/object_detection 
 COPY Pipfile Pipfile.lock $APP_DIR
-COPY k8s/config_k8s.ini $APP_DIR/config.ini
 
 WORKDIR $APP_DIR
 

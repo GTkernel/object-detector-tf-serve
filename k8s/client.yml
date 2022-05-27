@@ -16,21 +16,21 @@ spec:
       volumes:
       - name: vfile
         hostPath:
-          path: /home/nosus/tile_lost_panda.mp4
+          path: $MP4_VIDEO_PATH
           type: File
-#      - name: odir
-#        hostPath:
-#          path: /tmp/output
-#          type: Directory
+      - name: cfile
+        hostPath:
+          path: $CONFIG_FILE_PATH
+          type: File
       containers:
       - name: feeder
-        image: video-feeder:latest
+        image: object-detect-client:latest
         imagePullPolicy: Never
         volumeMounts:
         - mountPath: /tmp/video.mp4
           name: vfile
- #       - mountPath: /tmp/output
- #         name: odir
+        - mountPath: /opt/camera-feed/config.ini
+          name: cfile
         command:
         - /bin/bash
         - -c

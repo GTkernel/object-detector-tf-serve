@@ -30,7 +30,7 @@ spec:
       nodeName: basalt
       containers:
       - name: tf-server
-        image: granite:30500/obj-detect-tf-serving:latest
+        image: obj-detect-server:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8501
